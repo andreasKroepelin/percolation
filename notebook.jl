@@ -127,6 +127,11 @@ Now, let's have a look at the result!
 Going in steps of $(step(ps)) through the range from $(minimum(ps)) to $(maximum(ps)) for ``p``, we plot the probability of a full connection.
 """
 
+# ╔═╡ ff901008-f124-11ea-094f-6de9a8f65b77
+md"""
+We see that there is not at all a linear relationship but the connectedness probability suddenly increases at a very specific value for ``p``.
+"""
+
 # ╔═╡ Cell order:
 # ╟─8f168358-f10c-11ea-2ee3-17046db1da2e
 # ╟─8ea56784-f11b-11ea-2db8-3d1fd57dad9d
@@ -138,3 +143,4 @@ Going in steps of $(step(ps)) through the range from $(minimum(ps)) to $(maximum
 # ╟─f33aea44-f11f-11ea-05ea-4d6042701014
 # ╠═46c88734-f118-11ea-363d-51e5669d04b9
 # ╠═7847735e-f118-11ea-0f69-8149367dbd65
+# ╟─ff901008-f124-11ea-094f-6de9a8f65b77
