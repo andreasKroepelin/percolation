@@ -132,6 +132,12 @@ md"""
 We see that there is not at all a linear relationship but the connectedness probability suddenly increases at a very specific value for ``p``.
 """
 
+# ╔═╡ 61b4d778-f125-11ea-153f-75fa405de8d1
+md"""
+Obviously, the existence of a continuous path between the upper left and lower right corner is just a proxy for how connected the system is in general.
+Try using other values for `start` and `stop` in the call of `check_connection` in `conn_prob` to see if this choice matters.
+"""
+
 # ╔═╡ Cell order:
 # ╟─8f168358-f10c-11ea-2ee3-17046db1da2e
 # ╟─8ea56784-f11b-11ea-2db8-3d1fd57dad9d
@@ -144,3 +150,4 @@ We see that there is not at all a linear relationship but the connectedness prob
 # ╠═46c88734-f118-11ea-363d-51e5669d04b9
 # ╠═7847735e-f118-11ea-0f69-8149367dbd65
 # ╟─ff901008-f124-11ea-094f-6de9a8f65b77
+# ╟─61b4d778-f125-11ea-153f-75fa405de8d1
