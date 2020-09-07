@@ -47,7 +47,7 @@ The question to answer is: **If the proportion of ones is ``p``, what is the pro
 
 # ╔═╡ 8fbd5282-f11e-11ea-0413-7378f02e1856
 md"""
-The following function implements checking for such connectedness given a matrix of `Bool` values.
+The following function implements checking for such connectedness given a matrix of `Bool` values and from where to where the connection should be checked (defaults to top left to bottom right).
 The algorithm is basically a breadth-first-search.
 """
 
