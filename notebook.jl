@@ -4,6 +4,12 @@
 using Markdown
 using InteractiveUtils
 
+# ╔═╡ 24f312c2-f126-11ea-37a8-d3ad904331c3
+begin
+	using LinearAlgebra
+	n = 10
+end
+
 # ╔═╡ 46c88734-f118-11ea-363d-51e5669d04b9
 using Plots
 
@@ -70,7 +76,7 @@ function check_connection(grid::AbstractMatrix{Bool};
 	all_reached = Set{eltype(idcs)}()
 	recently_reached = Set{eltype(idcs)}()
 	
-	if grid[first_idx]
+	if grid[start]
 		push!(all_reached, first_idx)
 		push!(recently_reached, first_idx)
 	else
@@ -92,8 +98,24 @@ function check_connection(grid::AbstractMatrix{Bool};
 		recently_reached = new_reached
 	end
 	
-	last_idx ∈ all_reached
+	stop ∈ all_reached
 end
+
+# ╔═╡ d4e64fb2-f126-11ea-209c-6fb41a0b3e92
+md"""
+We can test this function by trying out some obvious examples:
+"""
+
+# ╔═╡ 2c67936a-f127-11ea-2be0-07067fa7e8d9
+zigzag = Bidiagonal(trues(n), trues(n-1), :U)
+
+# ╔═╡ 33f3e9e4-f127-11ea-39dc-9d162ef8f6cc
+diagonal = Diagonal(trues(n))
+
+# ╔═╡ 02af7e2a-f127-11ea-3e69-c3ff02c82117
+check_connection(zigzag),
+check_connection(zigzag; start=CartesianIndex(1, n), stop=CartesianIndex(n, 1)),
+check_connection(diagonal)
 
 # ╔═╡ 3e3ea022-f11f-11ea-1f1a-1bcde8a9cabd
 md"""
@@ -144,6 +166,11 @@ Try using other values for `start` and `stop` in the call of `check_connection` 
 # ╟─8fbd5282-f11e-11ea-0413-7378f02e1856
 # ╠═c21785c0-f10c-11ea-1d81-13894c5629f5
 # ╠═f50e403a-f112-11ea-3c53-df2855ecf4f7
+# ╟─d4e64fb2-f126-11ea-209c-6fb41a0b3e92
+# ╠═24f312c2-f126-11ea-37a8-d3ad904331c3
+# ╠═2c67936a-f127-11ea-2be0-07067fa7e8d9
+# ╠═33f3e9e4-f127-11ea-39dc-9d162ef8f6cc
+# ╠═02af7e2a-f127-11ea-3e69-c3ff02c82117
 # ╟─3e3ea022-f11f-11ea-1f1a-1bcde8a9cabd
 # ╠═93e403d0-f117-11ea-19b2-e17d1bb4926f
 # ╟─f33aea44-f11f-11ea-05ea-4d6042701014
