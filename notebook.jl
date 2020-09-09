@@ -11,7 +11,12 @@ begin
 end
 
 # ╔═╡ 46c88734-f118-11ea-363d-51e5669d04b9
-using Plots
+begin
+	using Plots
+	using PlotThemes
+	theme(:wong)
+	gr()
+end
 
 # ╔═╡ 8f168358-f10c-11ea-2ee3-17046db1da2e
 md"# Percolation"
