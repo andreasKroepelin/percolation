@@ -77,8 +77,8 @@ function check_connection(grid::AbstractMatrix{Bool};
 	recently_reached = Set{eltype(idcs)}()
 	
 	if grid[start]
-		push!(all_reached, first_idx)
-		push!(recently_reached, first_idx)
+		push!(all_reached, start)
+		push!(recently_reached, start)
 	else
 		return false
 	end
