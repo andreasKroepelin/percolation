@@ -140,7 +140,11 @@ end
 # ╔═╡ 7847735e-f118-11ea-0f69-8149367dbd65
 begin
 	ps = 0:0.05:1
-	plot(ps, conn_prob.(ps; n=100, iter=1000))
+	plot(ps,
+		conn_prob.(ps; n=100, iter=1000),
+		ylabel="prob. of connectedness",
+		xlabel="\$p\$",
+		label=nothing)
 end
 
 # ╔═╡ f33aea44-f11f-11ea-05ea-4d6042701014
